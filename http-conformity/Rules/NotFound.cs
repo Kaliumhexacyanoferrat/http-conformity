@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using HttpConformity.Infrastructure;
 using HttpConformity.Model;
 
 namespace HttpConformity.Rules;
@@ -18,7 +19,7 @@ public class NotFound : IRule
 
         builder.Path = "idomostcertainlynotexist";
 
-        using var client = Infrastructure.CreateClient();
+        using var client = Web.CreateClient();
 
         using var result = await client.GetAsync(builder.Uri);
 

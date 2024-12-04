@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Net;
 using HttpConformity.Execution;
+using HttpConformity.Infrastructure;
 using HttpConformity.Model;
 using Spectre.Console;
 using Spectre.Console.Cli;
@@ -38,7 +39,8 @@ public sealed class TestCommand : AsyncCommand<TestCommand.Settings>
                 ValidationStatus.Failed => "red",
                 ValidationStatus.Warning => "yellow",
                 ValidationStatus.Passed => "green",
-                ValidationStatus.ExecutionFailed => "red"
+                ValidationStatus.ExecutionFailed => "red",
+                _ => "red"
             };
 
             AnsiConsole.Markup($"[{color}]({result.Status.ToString().ToUpper()})[/] {result.Rule.Specification} {result.Rule.Section}: {result.Rule.Requirement}");
@@ -91,7 +93,7 @@ public sealed class TestCommand : AsyncCommand<TestCommand.Settings>
     {
         try
         {
-            using var client = Infrastructure.CreateClient();
+            using var client = Web.CreateClient();
 
             using var result = await client.GetAsync(url);
 
