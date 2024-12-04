@@ -4,6 +4,8 @@ Simple tool to check a web server for conformity with the HTTP/1.1 specification
 As a basic requirement, you need to supply an endpoint that will return a `HTTP 200 OK` status when requested
 via `GET`.
 
+![image](https://github.com/user-attachments/assets/74f7fc45-2e9b-4fd1-9d4f-2deb35be4426)
+
 ## Running the Tool
 
 You can either clone this repository and run the project using the .NET SDK or use Docker.
