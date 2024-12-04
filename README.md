@@ -14,7 +14,7 @@ After cloning the repository, open a terminal and run the following commands:
 
 ```bash
 cd http-conformity
-dotnet run -- test https://google.com
+dotnet run -- test http://httpbin.org/get
 ```
 
 ### Docker
@@ -23,7 +23,7 @@ The following command runs a test via Docker, without the need of cloning this r
 Keep in mind that the target server needs to be reachable from inside the Docker container.
 
 ```bash
-docker run --it --rm genhttp/http-conformity test https://google.com
+docker run --rm -it genhttp/http-conformity test http://httpbin.org/get
 ```
 
 ### Return Codes

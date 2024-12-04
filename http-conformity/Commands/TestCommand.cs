@@ -43,7 +43,7 @@ public sealed class TestCommand : AsyncCommand<TestCommand.Settings>
                 _ => "red"
             };
 
-            AnsiConsole.Markup($"[{color}]({result.Status.ToString().ToUpper()})[/] {result.Rule.Specification} {result.Rule.Section}: {result.Rule.Requirement}");
+            AnsiConsole.MarkupLine($"[{color}]({result.Status.ToString().ToUpper()})[/] {result.Rule.Specification} {result.Rule.Section}: {result.Rule.Requirement}");
 
             if (result.Reason != null)
             {
@@ -99,7 +99,7 @@ public sealed class TestCommand : AsyncCommand<TestCommand.Settings>
 
             if (result.StatusCode != HttpStatusCode.OK)
             {
-                AnsiConsole.Markup($"[red]Server returned with status code {result.StatusCode}[/]");
+                AnsiConsole.MarkupLine($"[red]Server returned with status code {result.StatusCode}[/]");
                 return false;
             }
 

@@ -17,17 +17,19 @@ public class AdvancedClient : IAsyncDisposable
         }
     }
 
+    public Stream Stream { get; }
+
     public AdvancedClient(Uri uri)
     {
         _uri = uri;
         _client = new TcpClient(uri.Host, uri.Port);
+
+        Stream = _client.GetStream();
     }
 
     public async Task WriteAsync(string content)
     {
-        var stream = _client.GetStream();
-
-        await using var writer = new StreamWriter(stream, leaveOpen: true);
+        await using var writer = new StreamWriter(Stream, leaveOpen: true);
 
         await writer.WriteAsync(content);
 
@@ -36,9 +38,7 @@ public class AdvancedClient : IAsyncDisposable
 
     public async Task<string> ReadToEndAsync()
     {
-        var stream = _client.GetStream();
-
-        using var reader = new StreamReader(stream, leaveOpen: true);
+        using var reader = new StreamReader(Stream, leaveOpen: true);
 
         return await reader.ReadToEndAsync();
     }

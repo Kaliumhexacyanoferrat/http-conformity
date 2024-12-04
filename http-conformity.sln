@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8983629E-CCA9-4B04-A020-A024E61567A6}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpConformity", "http-conformity\HttpConformity.csproj", "{51CF8F5E-7F22-4DE3-9FC3-A46FB072682A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51CF8F5E-7F22-4DE3-9FC3-A46FB072682A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51CF8F5E-7F22-4DE3-9FC3-A46FB072682A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51CF8F5E-7F22-4DE3-9FC3-A46FB072682A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51CF8F5E-7F22-4DE3-9FC3-A46FB072682A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

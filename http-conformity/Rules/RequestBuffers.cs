@@ -14,8 +14,8 @@ public class RequestBuffers : IRule
     {
         await using var client = new AdvancedClient(url);
 
-        await client.WriteAsync("GET");
-        await client.WriteAsync($" {client.Path} HTTP/1.1\r\nHost: {url.Host}\r\n\r\n");
+        await client.WriteAsync($"GET");
+        await client.WriteAsync($" {client.Path} HTTP/1.0\r\nHost: {url.Host}\r\nConnection: close\r\n\r\n");
 
         var result = await client.ReadToEndAsync();
 

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HttpConformity": {
+      "commandName": "Project",
+      "commandLineArgs": "test http://httpbin.org/get"
+    }
+  }
+}
